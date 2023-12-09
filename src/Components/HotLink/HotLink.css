@@ -1,0 +1,32 @@
+.HotLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1% 10%;
+}
+
+.HotLink > .HotLink-left > ul {
+  display: flex;
+  align-items: center;
+}
+
+.HotLink > .HotLink-left > ul > li {
+  list-style: none;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.HotLink > .HotLink-right > ul {
+  display: flex;
+  align-items: center;
+}
+
+.HotLink > .HotLink-right > ul > li {
+  list-style: none;
+  /* margin-right: 20px; */
+  cursor: pointer;
+}
+
+.HotLink > .HotLink-right > ul > li:nth-child(even) {
+  margin-left: 20px;
+}

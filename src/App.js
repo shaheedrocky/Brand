@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./Components/Header/Header";
+import HotLink from "./Components/HotLink/HotLink";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* ======= HEADER START HERE ======= */}
+      <Header />
+      {/* ======= HEADER END HERE ======= */}
+      {/* ===== HOT LINKS START HERE ===== */}
+      <HotLink />
+      {/* ===== HOT LINKS END HERE ===== */}
     </div>
   );
 }

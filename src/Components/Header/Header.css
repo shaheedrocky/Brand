@@ -1,0 +1,33 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.5% 10%;
+}
+
+.header > .header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header > .header-mid {
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  width: 60%;
+}
+
+.header > .header-mid > input {
+  border: none;
+  outline: none;
+  padding: 5px;
+  flex: 1;
+}
+
+.header > .header-right > .icon {
+  color: "red";
+}
+
+.hr-line {
+  border-bottom: 1px solid #CDCDCD;
+}
