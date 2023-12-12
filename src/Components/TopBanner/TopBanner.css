@@ -1,0 +1,68 @@
+.TopBanner {
+  background-color: "blue";
+  margin: 2% 10%;
+  display: flex;
+  height: 360px;
+  width: 80%;
+  flex: 1;
+}
+
+.TopBanner > .TopBanner-left {
+  background-color: "orange";
+  flex: 2.5;
+}
+
+.TopBanner > .TopBanner-left > ul {
+  background-color: white;
+}
+
+.TopBanner > .TopBanner-left > ul > li {
+  list-style: none;
+  margin-bottom: 8px;
+  background-color: "red";
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+  margin-right: 30px;
+}
+
+.TopBanner > .TopBanner-mid {
+  flex: 5.5;
+}
+.TopBanner > .TopBanner-mid > .details {
+  margin: 15% 40px;
+}
+
+.TopBanner > .TopBanner-mid > .details > Button {
+  margin-top: 20px;
+}
+.TopBanner > .TopBanner-right {
+  flex: 2;
+}
+.TopBanner > .TopBanner-right > .getStarted{
+  background-color: #E3F0FF;
+  margin: 10px;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.TopBanner > .TopBanner-right > .getStarted > .top{
+  display: flex;
+  align-items: center;
+  
+}
+
+.TopBanner > .TopBanner-right > .getStarted > .top > p{
+  font-size: 15px;
+}
+.TopBanner > .TopBanner-right > .supp1 {
+  background-color: orange;
+  height: 90px;
+  margin: 10px 10px 0 10px;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  display: flex;
+  text-align: center;
+}

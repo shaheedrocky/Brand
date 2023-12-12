@@ -13,7 +13,15 @@ const Header = () => {
       <div className="header">
         <div className="header-left">
           <img src={Logo} alt="Logo" height={44} width={44} />
-          <h2 style={{ color: "#8CB7F5", marginLeft: 10 }}>Brand</h2>
+          <h2
+            style={{
+              color: "#8CB7F5",
+              marginLeft: 10,
+              backgroundColor: "white",
+            }}
+          >
+            Brand
+          </h2>
         </div>
         <div
           className="header-mid"
@@ -28,7 +36,7 @@ const Header = () => {
               border: "none",
               color: "white",
               padding: "3px",
-              borderRadius:0,
+              borderRadius: 0,
               cursor: "pointer",
               fontSize: "12px",
               textTransform: "capitalize",
@@ -37,16 +45,37 @@ const Header = () => {
             Search
           </Button>
         </div>
-        <div className="header-right">
-          <PersonIcon style={{ color: "grey", cursor: "pointer" }} />
+        <div className="header-right" style={{ backgroundColor: "white" }}>
+          <PersonIcon
+            style={{
+              color: "grey",
+              cursor: "pointer",
+              backgroundColor: "white",
+            }}
+          />
           <MessageIcon
-            style={{ color: "grey", cursor: "pointer", marginLeft: 10 }}
+            style={{
+              color: "grey",
+              cursor: "pointer",
+              marginLeft: 10,
+              backgroundColor: "white",
+            }}
           />
           <FavoriteIcon
-            style={{ color: "grey", cursor: "pointer", marginLeft: 10 }}
+            style={{
+              color: "grey",
+              cursor: "pointer",
+              marginLeft: 10,
+              backgroundColor: "white",
+            }}
           />
           <ShoppingCartIcon
-            style={{ color: "grey", cursor: "pointer", marginLeft: 10 }}
+            style={{
+              color: "grey",
+              cursor: "pointer",
+              marginLeft: 10,
+              backgroundColor: "white",
+            }}
           />
         </div>
       </div>

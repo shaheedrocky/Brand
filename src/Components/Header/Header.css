@@ -2,12 +2,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0.5% 10%;
+  padding: 0.5% 10%;
+  background-color: white;
 }
 
 .header > .header-left {
   display: flex;
   align-items: center;
+  background-color: white;
 }
 
 .header > .header-mid {
@@ -15,6 +17,7 @@
   align-items: center;
   border-radius: 5px;
   width: 60%;
+  background-color: white;
 }
 
 .header > .header-mid > input {
@@ -22,12 +25,16 @@
   outline: none;
   padding: 5px;
   flex: 1;
+  background-color: white;
 }
 
+.header > .header-right {
+  background-color: "white";
+}
 .header > .header-right > .icon {
   color: "red";
 }
 
 .hr-line {
-  border-bottom: 1px solid #CDCDCD;
+  border-bottom: 1px solid #cdcdcd;
 }
