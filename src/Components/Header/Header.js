@@ -7,11 +7,12 @@ import PersonIcon from "@material-ui/icons/Person";
 import MessageIcon from "@material-ui/icons/Message";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import { Container } from "react-bootstrap";
 const Header = () => {
   return (
-    <>
-      <div className="header">
-        <div className="header-left">
+    <Container>
+      <div className="d-flex align-items-center  justify-content-between pt-2">
+        <div className="d-flex align-items-center">
           <img src={Logo} alt="Logo" height={44} width={44} />
           <h2
             style={{
@@ -24,10 +25,14 @@ const Header = () => {
           </h2>
         </div>
         <div
-          className="header-mid"
+          className="d-flex align-items-center rounded-1 w-50 justify-content-between"
           style={{ border: `2px solid ${colors.blue}` }}
         >
-          <input type="text" placeholder="Search" />
+          <input
+            type="text"
+            placeholder="Search"
+            className="border-none outline-none w-100 ps-1"
+          />
           <Button
             className="button"
             title="Search"
@@ -81,7 +86,7 @@ const Header = () => {
       </div>
 
       <div className="hr-line" />
-    </>
+    </Container>
   );
 };
 

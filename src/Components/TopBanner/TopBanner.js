@@ -1,105 +1,51 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./TopBanner.css";
 import banner from "../../assets/images/banner.png";
 import { Avatar, Button } from "@material-ui/core";
 import { colors } from "../Constant/Colors";
+import { onGetAllCategories } from "../../API/ApiCalls";
+
 const TopBanner = () => {
   const [activeTab, setActiveTab] = useState(0);
+  const [allCategories, setAllCategories] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await onGetAllCategories();
+        setAllCategories(response);
+      } catch (error) {
+        console.error("Error fetching categories:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  console.log("allCategories", allCategories);
+
   return (
-    <div className="TopBanner" style={{ flex: 1 }}>
+   <div className="TopBanner" style={{ flex: 1 }}>
       <div className="TopBanner-left" style={{ backgroundColor: "white" }}>
-        <ul>
-          <li
-            onClick={() => setActiveTab(0)}
-            style={{
-              backgroundColor: activeTab === 0 ? "#E5F1FF" : "transparent",
-              color: activeTab === 0 ? "black" : "grey",
-              fontWeight: activeTab === 0 ? "bold" : "normal",
-            }}
-          >
-            Automobiles
-          </li>
-          <li
-            onClick={() => setActiveTab(1)}
-            style={{
-              backgroundColor: activeTab === 1 ? "#E5F1FF" : "transparent",
-              color: activeTab === 1 ? "black" : "grey",
-              fontWeight: activeTab === 1 ? "bold" : "normal",
-            }}
-          >
-            Clothes and wear
-          </li>
-          <li
-            onClick={() => setActiveTab(2)}
-            style={{
-              backgroundColor: activeTab === 2 ? "#E5F1FF" : "transparent",
-              color: activeTab === 2 ? "black" : "grey",
-              fontWeight: activeTab === 2 ? "bold" : "normal",
-            }}
-          >
-            Home interiors
-          </li>
-          <li
-            onClick={() => setActiveTab(3)}
-            style={{
-              backgroundColor: activeTab === 3 ? "#E5F1FF" : "transparent",
-              color: activeTab === 3 ? "black" : "grey",
-              fontWeight: activeTab === 3 ? "bold" : "normal",
-            }}
-          >
-            Computer and tech
-          </li>
-          <li
-            onClick={() => setActiveTab(4)}
-            style={{
-              backgroundColor: activeTab === 4 ? "#E5F1FF" : "transparent",
-              color: activeTab === 4 ? "black" : "grey",
-              fontWeight: activeTab === 4 ? "bold" : "normal",
-            }}
-          >
-            Tools, equipments
-          </li>
-          <li
-            onClick={() => setActiveTab(5)}
-            style={{
-              backgroundColor: activeTab === 5 ? "#E5F1FF" : "transparent",
-              color: activeTab === 5 ? "black" : "grey",
-              fontWeight: activeTab === 5 ? "bold" : "normal",
-            }}
-          >
-            Sports and outdoor
-          </li>
-          <li
-            onClick={() => setActiveTab(6)}
-            style={{
-              backgroundColor: activeTab === 6 ? "#E5F1FF" : "transparent",
-              color: activeTab === 6 ? "black" : "grey",
-              fontWeight: activeTab === 6 ? "bold" : "normal",
-            }}
-          >
-            Animal and pets
-          </li>
-          <li
-            onClick={() => setActiveTab(7)}
-            style={{
-              backgroundColor: activeTab === 7 ? "#E5F1FF" : "transparent",
-              color: activeTab === 7 ? "black" : "grey",
-              fontWeight: activeTab === 7 ? "bold" : "normal",
-            }}
-          >
-            Machinery tools
-          </li>
-          <li
-            onClick={() => setActiveTab(8)}
-            style={{
-              backgroundColor: activeTab === 8 ? "#E5F1FF" : "transparent",
-              color: activeTab === 8 ? "black" : "grey",
-              fontWeight: activeTab === 8 ? "bold" : "normal",
-            }}
-          >
-            More category
-          </li>
-        </ul>
+        {Array.isArray(allCategories) &&
+          allCategories?.map((item, index) => {
+            return (
+              <ul>
+                <li
+                  onClick={() => setActiveTab(index)}
+                  style={{
+                    textTransform: "capitalize",
+                    backgroundColor:
+                      activeTab === index ? "#E5F1FF" : "transparent",
+                    color: activeTab === index ? "black" : "grey",
+                    fontWeight: activeTab === index ? "bold" : "normal",
+                  }}
+                >
+                  {item}
+                </li>
+              </ul>
+            );
+          })}
       </div>
       <div
         className="TopBanner-mid"
